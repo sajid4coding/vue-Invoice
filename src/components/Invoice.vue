@@ -11,12 +11,14 @@
                 'Description': '',
                 'Rate': '0',
                 'Quantity': '0',
+                'Discount': '0',
                 'Price': '$0'
             }
         ],
         'subtotal': {
             'default': '0'
         },
+        'globalDiscount': '0',
         'tax': '0',
         'balanceDue': '',
     })
@@ -35,6 +37,7 @@
             'Description': '',
             'Rate': '0',
             'Quantity': '0',
+            'Discount': '0',
             'Price': '0'
         })
     }
@@ -45,9 +48,10 @@
 
     function balanceDue(){
         const tax = data.subtotal * data.tax / 100
-        data.balanceDue = data.subtotal + tax
+        data.balanceDue = data.subtotal + tax - data.globalDiscount
         return data.balanceDue
     }
+
 </script>
 <template>
     <div class="container">
@@ -55,9 +59,6 @@
                 <h1>Recipient</h1>
                 <address contenteditable>
                     <p>Some Company<br>c/o Some Guy</p>
-                <p>
-                    {{ data }}
-                </p>
                 </address>
                 <span><img alt="" src="http://www.jonathantneal.com/examples/invoice/logo.png"><input type="file" accept="image/*"></span>
         </header>
@@ -94,6 +95,7 @@
                         <th><span contenteditable>Description</span></th>
                         <th><span contenteditable>Rate</span></th>
                         <th><span contenteditable>Quantity</span></th>
+                        <th><span contenteditable>Discount ($)</span></th>
                         <th><span contenteditable>Price</span></th>
                     </tr>
                 </thead>
@@ -103,7 +105,8 @@
                         <td><input type="text" contenteditable v-model="item.Description"></td>
                         <td><input class="text-end" type="text" contenteditable v-model="item.Rate"></td>
                         <td><input class="text-end" type="text" contenteditable v-model="item.Quantity"></td>
-                        <td>${{ item.Price=item.Rate*item.Quantity }}</td>
+                        <td><input class="text-end" type="text" contenteditable v-model="item.Discount"></td>
+                        <td class="text-end">${{ item.Discount ? item.Price=item.Rate*item.Quantity-item.Discount : item.Price=item.Rate*item.Quantity }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -117,6 +120,10 @@
                     <th><span contenteditable>Amount Paid</span></th>
                     <td><input type="number" contenteditable v-model="data.tax"></td>
                 </tr> -->
+                <tr>
+                    <th><span contenteditable>Global Discount ($)</span></th>
+                    <td><input class="text-end" type="text" contenteditable v-model="data.globalDiscount"></td>
+                </tr>
                 <tr>
                     <th><span contenteditable>Tax</span></th>
                     <td><input class="text-end" type="text" contenteditable v-model="data.tax"></td>
