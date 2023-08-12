@@ -1,7 +1,44 @@
-# Vue 3 + Vite
+# Dynamic Invoice Generator
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+#### This is Invoice Generator built with vue.
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🚀 Project setup
+
+Use [git](https://git-scm.com/) to clone the project.
+
+```bash
+git clone https://github.com/sajid4coding/vue-Invoice.git
+```
+Enter the project.
+```bash
+cd vue-Invoice
+```
+Use [npm](https://www.npmjs.com/) to install dependencies.
+```bash
+npm install
+```
+
+
+## ☄️ Usage
+
+Compiles and hot-reloads for development
+```bash
+npm run dev
+```
+
+Compiles and minifies for production
+```bash
+npm run build
+```
+
+## 👷‍♂️ Author
+<a href="https://github.com/sajid4coding">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/110894919?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Sajal Islam Sajid</b></sub></a> <a href="https://github.com/sajid4coding" title="Github">🚀</a>
+
+[![Gmail Badge](https://img.shields.io/badge/-sajalislamsajid@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:sajalislamsajid@gmail.com)](mailto:sajalislamsajid@gmail.com)
+
+
+
