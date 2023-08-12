@@ -66,21 +66,21 @@
             <h1>Invoice</h1>
             <table class="meta1">
                 <tr>
-                    <th><span contenteditable>Address</span></th>
+                    <th><span>Address</span></th>
                     <td><input type="text" contenteditable v-model="data.address"></td>
                 </tr>
                 <tr>
-                    <th><span contenteditable>Phone</span></th>
+                    <th><span>Phone</span></th>
                     <td><input type="text" contenteditable v-model="data.phone"></td>
                 </tr>
             </table>
             <table class="meta">
                 <tr>
-                    <th><span contenteditable>Invoice #</span></th>
+                    <th><span>Invoice #</span></th>
                     <td><input type="number" contenteditable v-model="data.invoiceID"></td>
                 </tr>
                 <tr>
-                    <th><span contenteditable>Date</span></th>
+                    <th><span>Date</span></th>
                     <td><input type="text" contenteditable v-model="data.date"></td>
                 </tr>
                 <!-- <tr>
@@ -91,12 +91,12 @@
             <table class="inventory">
                 <thead>
                     <tr>
-                        <th><span contenteditable>Product</span></th>
-                        <th><span contenteditable>Description</span></th>
-                        <th><span contenteditable>Rate</span></th>
-                        <th><span contenteditable>Quantity</span></th>
-                        <th><span contenteditable>Discount ($)</span></th>
-                        <th><span contenteditable>Price</span></th>
+                        <th><span>Product</span></th>
+                        <th><span>Description</span></th>
+                        <th><span>Rate</span></th>
+                        <th><span>Quantity</span></th>
+                        <th><span>Discount ($)</span></th>
+                        <th><span>Price</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,7 +113,7 @@
             <a class="add" @click="addMoreRow()">+</a>
             <table class="balance">
                 <tr>
-                    <th><span contenteditable>Sub Total</span></th>
+                    <th><span>Sub Total</span></th>
                     <td><span data-prefix>$</span><span>{{ subTotal() }}</span></td>
                 </tr>
                 <!-- <tr>
@@ -121,15 +121,15 @@
                     <td><input type="number" contenteditable v-model="data.tax"></td>
                 </tr> -->
                 <tr>
-                    <th><span contenteditable>Global Discount ($)</span></th>
+                    <th><span>Global Discount ($)</span></th>
                     <td><input class="text-end" type="text" contenteditable v-model="data.globalDiscount"></td>
                 </tr>
                 <tr>
-                    <th><span contenteditable>Tax</span></th>
+                    <th><span>Tax</span></th>
                     <td><input class="text-end" type="text" contenteditable v-model="data.tax"></td>
                 </tr>
                 <tr>
-                    <th><span contenteditable>Balance Due</span></th>
+                    <th><span>Balance Due</span></th>
                     <td><span data-prefix>$</span><span>{{ balanceDue() }}</span></td>
                 </tr>
             </table>
