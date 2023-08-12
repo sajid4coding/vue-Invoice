@@ -39,6 +39,10 @@
         })
     }
 
+    function removeRow() {
+        data.items.splice(0, 1);
+    }
+
     function balanceDue(){
         const tax = data.subtotal * data.tax / 100
         data.balanceDue = data.subtotal + tax
@@ -95,7 +99,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in data.items" :key="index">
-                        <td><a class="cut">-</a><input type="text" contenteditable v-model="item.Product"></td>
+                        <td><a class="cut" @click="removeRow()">-</a><input type="text" contenteditable v-model="item.Product"></td>
                         <td><input type="text" contenteditable v-model="item.Description"></td>
                         <td><input class="text-end" type="text" contenteditable v-model="item.Rate"></td>
                         <td><input class="text-end" type="text" contenteditable v-model="item.Quantity"></td>
@@ -224,8 +228,7 @@
 
     /* table meta & balance */
 
-    table.meta1, table.balance { float: left; width: 36%; }
-    table.meta1:after, table.balance:after { clear: both; content: ""; display: table; }
+    table.meta1 { float: left; width: 36%; }
 
     /* table meta */
 
